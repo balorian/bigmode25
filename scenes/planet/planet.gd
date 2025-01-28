@@ -1,8 +1,8 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("loading map " + MapManager.selected_map)
 	pass # Replace with function body.
 
 

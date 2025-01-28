@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=4 uid="uid://kawbdqojlpwn"]
 
-[ext_resource type="Script" path="res://scenes/planet.gd" id="1_upm6q"]
+[ext_resource type="Script" path="res://scenes/planet/planet.gd" id="1_upm6q"]
 [ext_resource type="Texture2D" uid="uid://dtkrkm8bfr2wr" path="res://assets/ui/theme/panel_unfocused.png" id="1_yrcmu"]
 [ext_resource type="Texture2D" uid="uid://cdxkgoo6nrbds" path="res://assets/ui/theme/panel_focused.png" id="2_f7cp1"]
 [ext_resource type="Texture2D" uid="uid://6wpfsn1c36tw" path="res://assets/ui/icons/number_7.png" id="3_e61ow"]

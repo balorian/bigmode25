@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	SceneManager.switchTo("")
+	SceneManager.switchTo("travel/travel_selection")
 	pass # Replace with function body.

@@ -11,4 +11,4 @@ func _process(delta):
 	pass
 
 func switchTo(scene):
-	get_tree().change_scene_to_file("res://scenes/travel_selection.tscn")
+	get_tree().change_scene_to_file("res://scenes/" + scene + ".tscn")
