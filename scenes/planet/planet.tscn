@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://kawbdqojlpwn"]
+[gd_scene load_steps=48 format=4 uid="uid://kawbdqojlpwn"]
 
 [ext_resource type="Script" path="res://scenes/planet/planet.gd" id="1_upm6q"]
 [ext_resource type="Texture2D" uid="uid://dtkrkm8bfr2wr" path="res://assets/ui/theme/panel_unfocused.png" id="1_yrcmu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c7hnu4sh01o1u" path="res://assets/units/blob.png" id="17_a3ov6"]
 [ext_resource type="Texture2D" uid="uid://iq5bnjdrpe3w" path="res://assets/units/turret.png" id="18_oofat"]
 [ext_resource type="Texture2D" uid="uid://5w6pu4hmo1f7" path="res://assets/work/buildingx64.png" id="19_ifnta"]
+[ext_resource type="Texture2D" uid="uid://d31wbf5ypdbsn" path="res://assets/units/base.png" id="20_t17bv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbl23"]
 
@@ -142,6 +143,77 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rhe6b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arw6i"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ss36"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjqq"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6q8j"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jer15"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijq2j"]
+atlas = ExtResource("20_t17bv")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wch0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ss36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6q8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jer15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijq2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jer15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6q8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ss36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw6i")
 }],
 "loop": true,
 "name": &"default",
@@ -342,3 +414,9 @@ texture = ExtResource("19_ifnta")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(177, 77)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(210, -108)
+sprite_frames = SubResource("SpriteFrames_wch0i")
+autoplay = "default"
+frame_progress = 0.105654
