@@ -1,0 +1,181 @@
+[gd_scene load_steps=14 format=3 uid="uid://w6jrvg246nap"]
+
+[ext_resource type="Script" path="res://scenes/travel_selection.gd" id="1_ha4e3"]
+[ext_resource type="Texture2D" uid="uid://2blvmayj5rh3" path="res://assets/travel/travel_bg.png" id="1_t73qq"]
+[ext_resource type="Texture2D" uid="uid://c4wswddu5irrq" path="res://assets/travel/planet_1.png" id="2_0khdy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ilv"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgnru"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl12v"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3m8j"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aik5y"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wdwp"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bjqf"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjjkx"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmloi"]
+atlas = ExtResource("2_0khdy")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfhtv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ilv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgnru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl12v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3m8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aik5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wdwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bjqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjjkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmloi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="TravelSelection" type="Node2D"]
+script = ExtResource("1_ha4e3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_t73qq")
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(113, 287)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(236, 214)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(235, 350)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(363, 262)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(460, 185)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(478, 330)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(622, 252)
+sprite_frames = SubResource("SpriteFrames_sfhtv")
+autoplay = "default"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(161, 264)
+points = PackedVector2Array(-21, 16, 55, -28)
+width = 4.0
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(161, 264)
+points = PackedVector2Array(-28, 42, 51, 79)
+width = 4.0
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(161, 264)
+points = PackedVector2Array(99, 80, 187, 13)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(161, 264)
+points = PackedVector2Array(98, -45, 182, -12)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="Line2D5" type="Line2D" parent="."]
+position = Vector2(282, 167)
+points = PackedVector2Array(99, 80, 187, 13)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="Line2D3" type="Line2D" parent="Line2D5"]
+position = Vector2(3, 35)
+points = PackedVector2Array(99, 80, 171, 119)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="Line2D3" type="Line2D" parent="Line2D5/Line2D3"]
+position = Vector2(118.021, 50.72)
+scale = Vector2(1.02083, 0.92)
+points = PackedVector2Array(99, 80, 196.878, 16.6087)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
+
+[node name="Line2D3" type="Line2D" parent="Line2D5/Line2D3/Line2D3"]
+position = Vector2(-22, -143)
+points = PackedVector2Array(99, 80, 214.959, 131.348)
+width = 4.0
+default_color = Color(0.577008, 0.577008, 0.577008, 1)
