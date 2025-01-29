@@ -1,0 +1,154 @@
+[gd_scene load_steps=20 format=3 uid="uid://btw07ispo84bw"]
+
+[ext_resource type="Script" path="res://scenes/planet/structure.gd" id="1_khmnb"]
+[ext_resource type="Texture2D" uid="uid://d31wbf5ypdbsn" path="res://assets/units/base.png" id="2_j50bb"]
+[ext_resource type="Texture2D" uid="uid://cxydtno67g3ep" path="res://assets/units/impact.png" id="3_wb0ju"]
+[ext_resource type="AudioStream" uid="uid://moqjviqy1he2" path="res://assets/audio/thud.wav" id="4_r37nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx2jb"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyhj2"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w3iq"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5eda"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ve4"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnkgl"]
+atlas = ExtResource("2_j50bb")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp5st"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyhj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w3iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5eda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ve4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnkgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ve4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5eda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w3iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyhj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2jb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olldr"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp8cp"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgaty"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g10nc"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh26t"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpcoo"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upft2"]
+atlas = ExtResource("3_wb0ju")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfaqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olldr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp8cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgaty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g10nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh26t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpcoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upft2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Structure" type="Node2D"]
+script = ExtResource("1_khmnb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_xp5st")
+autoplay = "default"
+frame_progress = 0.337066
+
+[node name="ImpactAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -14)
+sprite_frames = SubResource("SpriteFrames_vfaqb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r37nc")
+pitch_scale = 0.41
