@@ -31,30 +31,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -37.0
-offset_top = -31.0
-offset_right = 37.0
+offset_left = -116.0
+offset_top = -55.0
+offset_right = 116.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="LaunchButton" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="LaunchButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "LAUNCH"
 
-[node name="WinButton" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="WinButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "CLOSE BLACKHOLE"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="planets" type="Node2D" parent="."]
 
@@ -172,8 +179,8 @@ destination_planet = 7
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_w7j30")
 
-[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/LaunchButton" to="." method="_on_launch_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/LaunchButton" to="." method="_on_launch_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="planet_selected" from="planets/Planet" to="." method="_on_planet_planet_selected"]
 [connection signal="planet_selected" from="planets/Planet2" to="." method="_on_planet_planet_selected"]
 [connection signal="planet_selected" from="planets/Planet3" to="." method="_on_planet_planet_selected"]

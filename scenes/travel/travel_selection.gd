@@ -5,8 +5,8 @@ var connections
 
 var selected_planet
 
-@onready var launch_button = $CanvasLayer/Control/HBoxContainer/LaunchButton
-@onready var win_button = $CanvasLayer/Control/HBoxContainer/WinButton
+@onready var launch_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/LaunchButton
+@onready var win_button = $CanvasLayer/Control/VBoxContainer/HBoxContainer/WinButton
 
 
 # Called when the node enters the scene tree for the first time.
