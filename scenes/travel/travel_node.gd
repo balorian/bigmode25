@@ -1,8 +1,11 @@
 extends Node2D
 
+@export var planet_id : int
 @export var map_name : String
 
 @onready var focus = $focus_animation
+
+var disabled = true
 
 signal planet_selected(map_name)
 
@@ -18,5 +21,5 @@ func set_focused(value):
 	focus.visible = value
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and not disabled:
 		planet_selected.emit(map_name)

@@ -152,3 +152,9 @@ sprite_frames = SubResource("SpriteFrames_vfaqb")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_r37nc")
 pitch_scale = 0.41
+
+[node name="debug_label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "debug"

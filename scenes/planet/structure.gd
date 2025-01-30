@@ -9,13 +9,25 @@ var tween : Tween = null
 
 @onready var impact_animation = $ImpactAnimation
 
+signal generatePower(amount: int)
+var clock : float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$debug_label.visible = SettingsManager.debug
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if SettingsManager.debug:
+		$debug_label.text = "%v" % position
+	
+	clock += delta
+	if clock >= SettingsManager.tick:
+		clock -= SettingsManager.tick
+		generatePower.emit(1)
+	
 	match state:
 		State.FALLING:
 			if(tween == null):
@@ -31,7 +43,6 @@ func _process(delta):
 	pass
 	
 func on_tween_finished():
-	print("Tween finished")
 	state = State.READY
 	impact_animation.visible = true
 	impact_animation.play()

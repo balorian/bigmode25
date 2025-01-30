@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 SceneManager="*res://globals/SceneManager.gd"
 MapManager="*res://globals/MapManager.gd"
 AudioManager="*res://globals/AudioManager.gd"
+SettingsManager="*res://globals/SettingsManager.gd"
+PlayerData="*res://globals/PlayerData.gd"
 
 [display]
 

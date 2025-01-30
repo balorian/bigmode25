@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://w6jrvg246nap"]
+[gd_scene load_steps=6 format=3 uid="uid://w6jrvg246nap"]
 
 [ext_resource type="Script" path="res://scenes/travel/travel_selection.gd" id="1_ha4e3"]
 [ext_resource type="Texture2D" uid="uid://2blvmayj5rh3" path="res://assets/travel/travel_bg.png" id="1_t73qq"]
+[ext_resource type="Script" path="res://scenes/travel/connection.gd" id="4_8j0qp"]
 [ext_resource type="PackedScene" uid="uid://dkbyasnnruvwt" path="res://scenes/travel/travel_node.tscn" id="4_y11bg"]
+[ext_resource type="AudioStream" uid="uid://c6quh5prfvpj5" path="res://assets/audio/win_jingle.wav" id="5_w7j30"]
 
 [node name="TravelSelection" type="Node2D"]
 script = ExtResource("1_ha4e3")
@@ -29,99 +31,149 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="LaunchButton" type="Button" parent="CanvasLayer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -74.0
+offset_left = -37.0
 offset_top = -31.0
-grow_horizontal = 0
+offset_right = 37.0
+grow_horizontal = 2
 grow_vertical = 0
+
+[node name="LaunchButton" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 disabled = true
 text = "LAUNCH"
+
+[node name="WinButton" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "CLOSE BLACKHOLE"
 
 [node name="planets" type="Node2D" parent="."]
 
 [node name="Planet" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(126, 291)
+planet_id = 1
 map_name = "intro_map"
 
 [node name="Planet2" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(235, 222)
+planet_id = 2
 map_name = "planet_2"
 
 [node name="Planet3" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(236, 356)
+planet_id = 3
 map_name = "planet_3"
 
 [node name="Planet4" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(364, 265)
+planet_id = 4
 map_name = "planet_4"
 
 [node name="Planet5" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(458, 190)
+planet_id = 5
 map_name = "planet_5"
 
 [node name="Planet6" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(478, 331)
+planet_id = 6
 map_name = "planet_6"
 
 [node name="Planet7" parent="planets" instance=ExtResource("4_y11bg")]
 position = Vector2(626, 252)
+planet_id = 7
 map_name = "planet_7"
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="connections" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="connections"]
 position = Vector2(159, 256)
 points = PackedVector2Array(-10, 12, 51, -27)
 width = 4.0
+default_color = Color(0.576471, 0.576471, 0.576471, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 1
+destination_planet = 2
 
-[node name="Line2D2" type="Line2D" parent="."]
+[node name="Line2D2" type="Line2D" parent="connections"]
 position = Vector2(161, 264)
 points = PackedVector2Array(-12, 51, 51, 79)
 width = 4.0
+default_color = Color(0.576471, 0.576471, 0.576471, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 1
+destination_planet = 3
 
-[node name="Line2D3" type="Line2D" parent="."]
+[node name="Line2D3" type="Line2D" parent="connections"]
 position = Vector2(161, 264)
 points = PackedVector2Array(99, 80, 187, 13)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 3
+destination_planet = 4
 
-[node name="Line2D4" type="Line2D" parent="."]
+[node name="Line2D4" type="Line2D" parent="connections"]
 position = Vector2(161, 264)
 points = PackedVector2Array(98, -45, 182, -12)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 2
+destination_planet = 4
 
-[node name="Line2D5" type="Line2D" parent="."]
+[node name="Line2D5" type="Line2D" parent="connections"]
 position = Vector2(284, 170)
 points = PackedVector2Array(99, 80, 155, 28)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 4
+destination_planet = 5
 
-[node name="Line2D6" type="Line2D" parent="."]
+[node name="Line2D6" type="Line2D" parent="connections"]
 position = Vector2(285, 202)
 points = PackedVector2Array(99, 80, 171, 119)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 4
+destination_planet = 6
 
-[node name="Line2D8" type="Line2D" parent="."]
+[node name="Line2D8" type="Line2D" parent="connections"]
 position = Vector2(380.563, 121.16)
 scale = Vector2(1.02083, 0.92)
 points = PackedVector2Array(99, 80, 214.959, 131.348)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 5
+destination_planet = 7
 
-[node name="Line2D7" type="Line2D" parent="."]
+[node name="Line2D7" type="Line2D" parent="connections"]
 position = Vector2(403.021, 252.72)
 scale = Vector2(1.02083, 0.92)
 points = PackedVector2Array(99, 80, 196.878, 16.6087)
 width = 4.0
 default_color = Color(0.577008, 0.577008, 0.577008, 1)
+script = ExtResource("4_8j0qp")
+start_planet = 6
+destination_planet = 7
 
-[connection signal="pressed" from="CanvasLayer/Control/LaunchButton" to="." method="_on_launch_button_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w7j30")
+
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/LaunchButton" to="." method="_on_launch_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="planet_selected" from="planets/Planet" to="." method="_on_planet_planet_selected"]
 [connection signal="planet_selected" from="planets/Planet2" to="." method="_on_planet_planet_selected"]
 [connection signal="planet_selected" from="planets/Planet3" to="." method="_on_planet_planet_selected"]

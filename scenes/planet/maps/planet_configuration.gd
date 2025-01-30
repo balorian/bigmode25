@@ -1,6 +1,7 @@
-extends Node
+extends Node2D
 
-const WIN_JINGLE = preload("res://assets/audio/win_jingle.wav")
+@export var liftoff_energy = 25
+@export var planet_id = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
